@@ -41,6 +41,9 @@
   font-size: 0.85em;
 }
 
+.reveal .src {
+  font-size: 0.75em;
+}
 </style>
 
 
@@ -49,7 +52,7 @@ Deep learning: concepts and frameworks - find your way through the jungle
 author: Sigrid Keydana, Trivadis
 date: 02/06/2017
 autosize: true
-
+width: 1200
 
 ========================================================
 type:prompt
@@ -71,6 +74,21 @@ The idea itself is old ...
 
 &nbsp;
 
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=16, fig.height=8, fig.path='Figs/',
+                      echo=FALSE, warning=FALSE, message=FALSE,
+                      cache = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(MASS)
+bold_text_20 <- element_text(face = "bold", size = 20)
+bold_text_16 <- element_text(face = "bold", size = 16)
+```
+
+
 The Perceptron (Rosenblatt, 1958)
 
 <figure>
@@ -89,13 +107,13 @@ The magic ingredients have been there for long ...
 
 <table>
 <tr>
-<td>Backpropagation (1980's) [1]</td><td>Convolutional Neural Networks (1990's) [2]</td><td>Long short Term Memory (1990's) [3]</td>
+<td>Backpropagation (1980's) </td><td>Convolutional Neural Networks (1990's)</td><td>Long Short Term Memory (1990's)</td>
 </tr>
 <tr>
-<td><image src="hinton.jpg" /></td><td><image src="lecun.jpg" /></td><td><image src="schmidhuber_lstm.jpg" /></td>
+<td><img src='hinton.jpg' width='300px' /></td><td><img src='lecun.jpg' width='300px'/></td><td><img src='schmidhuber_lstm.jpg' width='300px'/></td>
 </tr>
+<tr><td class='src'>Sources: [1],[2],[3]</td></tr>
 </table>
-
 
 
 ... but the hype is here NOW!
@@ -106,7 +124,16 @@ The magic ingredients have been there for long ...
 
 &nbsp;
 
-Bilder von applications
+<table>
+<tr>
+<td><img src='self_driving_cars.png' width='300px' /></td><td><img src='gnmt.png' width='300px'/></td><td><img src='skincancer.png' width='300px'/></td>
+</tr>
+<tr>
+<td><img src='go.png' width='300px' /></td><td><img src='stock.png' width='300px'/></td><td><img src='weather.png' width='300px'/></td>
+</tr>
+<tr><td class='src'>Sources: [4],[5],[6],[7],[8], [9]</td></tr>
+</table>
+
 
 
 Deep Learning in computer vision
@@ -117,9 +144,16 @@ Deep Learning in computer vision
 
 &nbsp;
 
-Anwendungsbeispiele CNN
+<table>
+<tr>
+<td><img src='image_classification.png' width='500px' /></td><td><img src='object_detection.png' width='500px'/></td>
+</tr>
+<tr>
+<td><img src='image_captioning.png' width='800px' /></td><td><img src='qa.png' width='800px'/></td>
+</tr>
+<tr><td class='src'>Sources: [10], [11], [12], [13] <br />(great reading list at: <a href="https://github.com/kjw0612/awesome-deep-vision">https://github.com/kjw0612/awesome-deep-vision)</a></td></tr>
+</table>
 
-incl. medicine
 
 
 Deep Learning in natural language processing
@@ -130,8 +164,16 @@ Deep Learning in natural language processing
 
 &nbsp;
 
+<table>
+<tr>
+<td><img src='speech_recognition.png' width='800px' /></td><td><img src='machine_translation.png' width='300px'/></td>
+</tr>
+<tr>
+<td><img src='conversation_modeling.png' width='600px' /></td><td><img src='dynamic_memory_network.png' width='500px'/></td>
+</tr>
+<tr><td class='src'>Sources: [14], [15], [16], [17] <br /> (great reading list at: <a href="https://github.com/kjw0612/awesome-rnn">https://github.com/kjw0612/awesome-rnn</a></td></tr>
+</table>
 
-Anwendungsbeipsiöle
 
 Deep Learning for image (text/video/audio...) generation
 ========================================================
@@ -141,8 +183,18 @@ Deep Learning for image (text/video/audio...) generation
 
 &nbsp;
 
+<table>
+<tr>
+<td><img src='cats.png' width='600px' /></td>
+</tr>
+<tr>
+<td><img src='srgan.png' width='600px' /></td>
+</tr>
+<tr><td class='src'>Sources: [18], [19]</td></tr>
+</table>
 
-Deep Learning for winning games
+
+Deep Learning for winning games: AlphaGo
 ========================================================
 
 <img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
@@ -150,6 +202,13 @@ Deep Learning for winning games
 
 &nbsp;
 
+<table>
+<tr>
+<td><img src='alphago2.png' width='600px' /></td>
+<td><img src='alphago.png' width='800px' /></td>
+</tr>
+<tr><td class='src'>Sources: [20], [21]</td></tr>
+</table>
 
 Deep Learning for time series forecasting
 ========================================================
@@ -159,6 +218,13 @@ Deep Learning for time series forecasting
 
 &nbsp;
 
+<table>
+<tr>
+<td><img src='ts.png' width='900px' /></td>
+<td><img src='ts2.png' width='900px' /></td>
+</tr>
+
+</table>
 
 Deep Learning in traditional data science
 ========================================================
@@ -168,6 +234,11 @@ Deep Learning in traditional data science
 
 &nbsp;
 
+- fraud detection
+- anomaly detection
+- churn analysis
+- recommender systems
+- ...
 
 Why did deep learning finally "take off"?
 ========================================================
@@ -179,7 +250,7 @@ Why did deep learning finally "take off"?
 
 - hardware
 - software
-- __data__
+- __big data__
 
 
 ========================================================
@@ -202,6 +273,20 @@ Rule-based systems vs. machine learning vs. deep learning
 
 &nbsp;
 
+<table style="width: 120%;">
+<tr>
+<td></td><th>Pre-ML programs</th><th>Machine learning (ML)</th><th>Deep learning(DL)</th>
+</tr>
+<tr>
+<th>in</th><td>data<br /> rules</td><td>data</td><td>data</td>
+</tr>
+<tr>
+<th>learn</th><td></td><td>mappings and functions</td><td>features<br /> mappings and functions</td>
+</tr>
+<tr>
+<th>out</th><td>conclusion</td><td>conclusion</td><td>conclusion</td>
+</tr>
+</table>
 
 How does "normal machine learning" work?
 ========================================================
@@ -210,6 +295,20 @@ How does "normal machine learning" work?
 <img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
 
 &nbsp;
+
+- Supervised learning:
+    - there exists a _ground truth_ / labels we can use to train the algorithm
+    - train on training set, then test on test set
+    - regression / classification
+    
+- Unsupervised learning:
+    - no ground truth exists
+    - clustering, principal components analysis...
+    
+- Reinforcement learning:
+    - learn from (delayed!) rewards
+    - exploitation vs. exploration
+    - in practice, often "sped up" by deep learning
 
 
 Cost function
@@ -220,8 +319,32 @@ Cost function
 
 &nbsp;
 
+Supervised learning (deep or not) works by minimizing a _cost function_ that quantifies how much the predictions are different from the ground truth.
 
-Function optimisation
+In regression, this normally is __mean squared error__: 
+
+  $\frac{1}{n} \sum_n{(\hat{y} - y)^2}$
+  
+whereas in classification it mostly is __cross entropy__ :
+
+  $- \sum_j{t_j log(y_j)}$ (to be a averaged over the training set)
+
+
+How can we minimize that cost function?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+<figure>
+    <img src='convex.png' width='50%'/>
+     <figcaption>Source: [31]]</figcaption>
+</figure>
+
+
+Going to the minimum in one step: least squares example
 ========================================================
 
 <img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
@@ -230,7 +353,20 @@ Function optimisation
 &nbsp;
 
 
-Optimisation in closed form by example: least squares
+- Goal: Minimize squared error $f(\mathbf{x}) = ||\mathbf{X\hat{\beta} - y}||^2_2$
+- Solution: Solve __normal equations__ $\mathbf{\hat{\beta}} = (\mathbf{X}^T\mathbf{{X}})^{-1} \mathbf{X}^T \mathbf{y}$
+
+```{r, fig.width=8, fig.height=4}
+data("mtcars")
+fit <- lm("mpg ~ disp", data = mtcars)
+intercept <- fit$coefficients[1]
+slope <- fit$coefficients[2]
+ggplot(mtcars, aes(disp, mpg)) + geom_point() + 
+  geom_abline(intercept = intercept, slope = slope, color = 'cyan')
+```
+
+
+Iterative optimisation for least squares: gradient descent
 ========================================================
 
 <img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
@@ -238,14 +374,17 @@ Optimisation in closed form by example: least squares
 
 &nbsp;
 
+- Goal: Minimize squared error $f(\mathbf{x}) = ||\mathbf{X\hat{\beta} - y}||^2_2$
+- Solution: Iteratively follow the gradient "downhill":
+$x = x - \epsilon \nabla_x f(\mathbf{x})= x - \epsilon (\mathbf{X}^T\mathbf{X}\mathbf{\hat{\beta}} - \mathbf{X^Ty})$ 
 
-Iterative optimisation for least squares
-========================================================
-
-<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
-<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
-
-&nbsp;
+<table>
+<tr>
+<td><img src='contours_evaluation_optimizers.gif' width='600px' /></td>
+<td><img src='saddle_point_evaluation_optimizers.gif' width='600px' /></td>
+</tr>
+<tr><td class='src'>Source: [22]</td></tr>
+</table>
 
 
 So the cost is determined at the output layer of the network...
@@ -257,6 +396,11 @@ So the cost is determined at the output layer of the network...
 &nbsp;
 
 
+... how can we know how to update _all those weights_?
+
+<img src='deep_nn.png' width='600px' />
+
+
 Backpropagation: "just" the chain rule
 ========================================================
 
@@ -264,6 +408,14 @@ Backpropagation: "just" the chain rule
 <img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
 
 &nbsp;
+
+- basically, just the chain rule: $\frac{dz}{dx} = \frac{dz}{dy} \frac{dy}{dx}$
+- chained over several layers:
+&nbsp;
+<figure>
+    <img src='backprop2.png' width='60%'/>
+    <figcaption>Source: [23]</figcaption>
+</figure>
 
 
 Backpropagation step-by-step
@@ -273,6 +425,142 @@ Backpropagation step-by-step
 <img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
 
 &nbsp;
+
+We'll gradually build up the gradient of the loss with respect to $y_i$, the output of the last hidden layer, and the weights $w_{ij}$, respectively.
+
+
+Here 
+- $i$ and $j$ are layers of the network ($j$ being the output layer)
+- $y_l$ is the output of layer $l$
+- $z_l$ is the aggregated input going into layer $l$ (before the activation function is applied)
+
+<figure>
+    <img src='backprop4.png' width="20%"/>
+</figure>
+
+&nbsp;
+
+
+Learning weights by backpropagation (1)
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+<figure>
+    <img src='backprop4.png' width="15%"/>
+</figure>
+
+&nbsp;
+
+__Step 1: Loss w.r.t. output (prediction)__
+
+At the output layer $j$, we compare class prediction $y_j$ and actual class $t$, using binary cross entropy/logistic loss: 
+$- (t\:log(y) + (1-t)\:log(1-y))$ 
+
+The gradient 
+
+$\frac{dE}{dy_j} = - (\frac{t}{y} + (-1) \frac{1-t}{1-y}) = \frac{y-t}{y(1-y)}$ 
+
+describes how the error $E$ changes as the prediction $y_j$ changes. 
+   
+
+Learning weights by backpropagation (2)
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp; 
+
+<figure>
+    <img src='backprop4.png' width="15%"/>
+</figure>
+
+&nbsp;
+  
+__Step 2: How does the prediction/output $y_j$ change as the input $z_j$ to the final neuron changes?__
+
+In the case of a logistic (sigmoid) neuron with output $y_j$, this is described by the gradient
+
+$\frac{dy_j}{dz_j} = y_j(1-y_j)$.
+
+ 
+Learning weights by backpropagation (3)
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp; 
+
+<figure>
+    <img src='backprop4.png' width="15%"/>
+</figure>
+
+&nbsp;
+  
+__Step 3a: How does the input $z_j$ to the final layer change as the weight $w_{ij}$ changes?__
+
+Here the gradient is 
+
+$\frac{dz_j}{dw_{ij}} = y_i$, 
+
+that is, the output of layer $i$.
+
+ 
+Learning weights by backpropagation (4)
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp; 
+
+<figure>
+    <img src='backprop4.png' width="15%"/>
+</figure>
+
+&nbsp;
+  
+__Step 3b: How does the input $z_j$ to the final layer change as the output of layer $i$ changes?__
+
+Here we have to take into account all connections a neuron $y_i$ has to the output layer: The gradient is 
+
+$\sum_j \frac{dz_j}{dy_i} = \sum_j w_{ij}$,
+
+that is, the sum of the weights going out of $y_i$.
+
+ 
+   
+Learning weights by backpropagation: Putting it all together
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp; 
+
+<figure>
+    <img src='backprop4.png' width="15%"/>
+</figure>
+
+&nbsp;
+  
+__Now that we have the single gradients, we use the _chain rule_ to back propagate the error:__
+
+The gradient of the loss w.r.t. $y_i$ is
+
+$\frac{dE}{dy_i} = \frac{y-t}{y(1-y)} y_j(1-y_j) \sum_j w_{ij}$
+
+Accordingly, we get the gradient of the loss w.r.t. $w_{ij}$ as
+
+$\frac{dE}{dy_i} = \frac{y-t}{y(1-y)} y_j(1-y_j) y_i$
+
+
+
 
 ========================================================
 type:prompt
@@ -294,6 +582,13 @@ Deep alone is not enough
 
 &nbsp;
 
+&nbsp;
+
+How ever deep we make our network, if we just chain layers of matrix multiplication one after another, all we get is a linear combination of the inputs.
+
+
+How can we solve non-linear problems with neural networks?
+
 
 The classic: sigmoid activation function
 ========================================================
@@ -303,6 +598,13 @@ The classic: sigmoid activation function
 
 &nbsp;
 
+```{r}
+sigmoid <- function(x) 1/(1 + exp(-x))
+x <- seq(-10,10, by = 0.01)
+plot(x, sigmoid(x), type = "l", xlab = "", ylab = "") 
+```
+
+
 The current default, kind of: ReLU
 ========================================================
 
@@ -310,6 +612,15 @@ The current default, kind of: ReLU
 <img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
 
 &nbsp;
+
+```{r}
+relu <- function(x){
+  x[x<0] <- 0
+  x
+}
+x <- seq(-10,10, by = 0.01)
+plot(x, relu(x), type = "l", xlab = "", ylab = "") 
+```
 
 
 Mostly for LSTMs: tanh
@@ -320,17 +631,10 @@ Mostly for LSTMs: tanh
 
 &nbsp;
 
-
-========================================================
-type:prompt
-
-&nbsp; 
-
-&nbsp; 
-
-<h1>
-Convolutional Neural Networks for computer vision
-</h1>
+```{r}
+x <- seq(-10,10, by = 0.01)
+plot(x, tanh(x), type = "l", xlab = "", ylab = "") 
+```
 
 
 ========================================================
@@ -341,8 +645,288 @@ type:prompt
 &nbsp; 
 
 <h1>
-Recurrent Neural Networks in NLP
+Convolutional Neural Networks for Computer Vision
 </h1>
+
+Going spatial: Convnets
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+LeNet: First successful application of convolutional neural networks by Yann LeCun, Yoshua Bengio et al.
+
+<figure>
+    <img src='lenet.png' width='80%'/>
+    <figcaption>Source: http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf</figcaption>
+</figure>
+
+The convolution operation (1)
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+<figure>
+    <img src='convolution_demo.png' width='60%'/>
+    <figcaption>Source: Goodfellow et al., Deep Learning.</figcaption>
+</figure>
+
+
+The convolution operation (2)
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+<figure>
+    <img src='2dconv.png' width='60%'/>
+    <figcaption>Source: Goodfellow et al., Deep Learning.</figcaption>
+</figure>
+
+Tasks in computer vision
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+<table>
+<tr>
+<td><img src='class_loc_dec_seg.png' width='100%' /></td>
+</tr>
+<tr><td class='src'>Source: [24]</td></tr>
+</table>
+
+Classification
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+In classification, the required output is a probability for each class.
+
+<table>
+<tr>
+<td><img src='classification.png' width='100%' /></td>
+</tr>
+<tr><td class='src'>Source: [24]</td></tr>
+</table>
+
+
+
+Localization
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+In localization, the network needs to identify the position of an object in an image.
+
+<table>
+<tr>
+<td><img src='localization.png' width='60%' /></td>
+</tr>
+<tr><td class='src'>Source: [25]</td></tr>
+</table>
+
+
+Object Detection
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+In object detection (a.k.a. image recognition), the network has to classify and localize multiple objects in an image. 
+
+<table>
+<tr>
+<td><img src='detection.png' width='70%' /></td>
+</tr>
+<tr><td class='src'>Source: [26]</td></tr>
+</table>
+
+
+Segmentation
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+In segmentation, the network needs to predict a class value for _each input pixel_.
+
+<table>
+<tr>
+<td><img src='segmentation.png' width='70%' /></td>
+</tr>
+<tr><td class='src'>Source: [27]</td></tr>
+</table>
+
+
+Semantic vs. Instance Segmentation
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Semantic segmentation segments by _class_, instance segmentation by _class instance_.
+
+<table>
+<tr>
+<td><img src='segmentation2.png' width='90%' /></td>
+</tr>
+<tr><td class='src'>Source: [28]</td></tr>
+</table>
+
+
+
+
+========================================================
+type:prompt
+
+&nbsp; 
+
+&nbsp; 
+
+<h1>
+Recurrent Neural Networks in Natural Language Processing
+</h1>
+
+
+Until now, all we've seen are static snapshots
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+How do we handle sequences?
+
+- language: words, sentences, paragraphs...
+- all kinds of _serial_ information: sensor data, stock prices...
+
+
+
+> Later that evening, she ran into Rachel and Thomas, who were engaged in a lively discussion about ethics in machine learning. Thomas she had met the week before already, but ____ she really hadn't seen for more than a year.
+
+
+I need to remember: Introducing hidden state
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+<table>
+<tr>
+<td><img src='rnn_olah.png' width='600px' /></td><td><img src='rnn_goodfellow.png' width='600px' /></td>
+</tr>
+<tr><td class='src'>Sources: [29], [31]</td></tr>
+</table>
+
+Basic RNN closeup
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+The basic RNN at every step combines new input and existing state.
+
+<table>
+<tr>
+<td><img src='rnn_olah2.png' width='800px' /></td>
+</tr>
+<tr><td class='src'>Source: [29]</td></tr>
+</table>
+
+Remembering is not enough
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Sometimes we also need to forget!
+
+Two kinds of state: the LSTM "conveyor belt"
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+The LSTM (_Long Short Term Memory_) architecture adds an additional state layer, the cell state:
+
+<table>
+<tr>
+<td><img src='lstm_olah.png' width='800px' /></td>
+</tr>
+<tr><td class='src'>Source: [29]</td></tr>
+</table>
+
+
+LSTM cell state and the three gates
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+The LSTM cell state is protected by three gates, the forget, input, and output gates:
+
+
+<table>
+<tr>
+<td><img src='forget_olah.png' width='500px' /></td><td><img src='input_olah.png' width='500px' /></td><td><img src='output_olah.png' width='500px' /></td>
+</tr>
+<tr><td class='src'>Source: [29]</td></tr>
+</table>
+
+
+RNN Example: Machine Translation
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+In translation, we have _two_ sets of sequential data, one on the source and one on the target side!
+
+Enter: sequence-to-sequence models
+
+
+<table>
+<tr>
+<td><img src='seq2seq.png' width='1000px' /></td>
+</tr>
+<tr><td class='src'>Source: [30]</td></tr>
+</table>
+
 
 
 ========================================================
@@ -357,7 +941,7 @@ Deep Learning Frameworks
 </h1>
 
 
-Sources
+Tensorflow and dataflow programming
 ========================================================
 
 <img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
@@ -365,9 +949,101 @@ Sources
 
 &nbsp;
 
+
+Sources
+========================================================
+class:smalltext
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+&nbsp;
+
 [1] <a href="https://cacm.acm.org/news/221108-artificial-intelligence-pioneer-says-we-need-to-start-over/fulltext">https://cacm.acm.org/news/221108-artificial-intelligence-pioneer-says-we-need-to-start-over</a>
 
 [2] Wikipedia
 
 [3] <a href="https://crude2refined.wordpress.com/2015/08/14/my-inns-big-data-conference-review-part-1/">https://crude2refined.wordpress.com/2015/08/14/my-inns-big-data-conference-review-part-1/</a>
+
+[4] <a href='http://selfdrivingcars.mit.edu/'>MIT 6.S094 Deep Learning for Self-Driving Cars Lecture Slides</a>
+
+[5] <a href="https://arxiv.org/pdf/1609.08144.pdf">Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation</a>
+
+[6] <a href='http://www.nature.com/nature/journal/v542/n7639/full/nature21056.html'>Esteva et al. Dermatologist-level classification of skin cancer with deep neural networks</a>
+
+[7] <a href='https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol'>Wikipedia. AlphaGo versus Lee Sedol</a>
+
+[8] <a href='www.sciedupress.com/journal/index.php/air/article/download/7720/5022'>Yoshihara et al. Leveraging temporal properties of news events for stock market prediction</a>
+
+[9] <a href='http://www.theweathercompany.com/newsroom/2017/01/23/seasonal-outlook-weather-company-predicts-unusually-mild-weather-early-february'</a> The Weather Company. Seasonal forecast</a>
+
+[10]<a href="http://papers.nips.cc/book/advances-in-neural-information-processing-systems-25-2012">Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton, ImageNet Classification with Deep Convolutional Neural Networks, NIPS, 2012.</a>
+
+
+Sources
+========================================================
+class:smalltext
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+
+&nbsp;
+
+[11] <a href="http://arxiv.org/pdf/1506.01497">Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun, Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks, arXiv:1506.01497.</a>
+
+[12] <a href="http://cs.stanford.edu/people/karpathy/cvpr2015.pdf">Andrej Karpathy, Li Fei-Fei, Deep Visual-Semantic Alignments for Generating Image Description, CVPR, 2015.
+</a>
+
+[13] <a href="http://arxiv.org/pdf/1505.00468">Stanislaw Antol, Aishwarya Agrawal, Jiasen Lu, Margaret Mitchell, Dhruv Batra, C. Lawrence Zitnick, Devi Parikh, VQA: Visual Question Answering, CVPR, 2015 SUNw:Scene Understanding workshop.</a>
+
+[14] <a href="https://arxiv.org/pdf/1506.07503.pdf">Jan Chorowski, Dzmitry Bahdanau, Dmitriy Serdyuk, Kyunghyun Cho, and Yoshua Bengio, Attention-Based Models for Speech Recognition, arXiv:1506.07503 / NIPS 2015</a>
+
+[15] <a href="https://arxiv.org/pdf/1508.04025.pdf">Minh-Thang Luong, Hieu Pham, and Christopher D. Manning, Effective Approaches to Attention-based Neural Machine Translation, arXiv:1508.04025</a>
+
+[16] <a href="https://arxiv.org/pdf/1506.05869.pdf">Oriol Vinyals and Quoc V. Le, A Neural Conversational Model, arXiv:1506.05869 </a>
+
+[17] <a href="https://arxiv.org/pdf/1506.07285.pdf">Ankit Kumar, Ozan Irsoy, Jonathan Su, James Bradbury, Robert English, Brian Pierce, Peter Ondruska, Mohit Iyyer, Ishaan Gulrajani, and Richard Socher, Ask Me Anything: Dynamic Memory Networks for Natural Language Processing, arXiv:1506.07285</a>
+
+
+
+Sources
+========================================================
+class:smalltext
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+
+&nbsp;
+
+[18] <a href="https://ajolicoeur.wordpress.com/cats/">https://ajolicoeur.wordpress.com/cats/</a>
+
+[19] <a href="https://arxiv.org/pdf/1609.04802.pdf">Christian Ledig, Lucas Theis, Ferenc Huszar, Jose Caballero, Andrew Cunningham, Alejandro Acosta, Andrew Aitken, Alykhan Tejani, Johannes Totz, Zehan Wang, Wenzhe Shi: Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network, arXiv:1609.04802</a>
+
+[20] <a href="https://deepmind.com/research/alphago/alphago-china/">https://deepmind.com/research/alphago/alphago-china/</a>
+
+[21] <a href="https://deepmind.com/blog/alphago-zero-learning-scratch/">https://deepmind.com/blog/alphago-zero-learning-scratch/a/a>
+
+[22] <a href="http://ruder.io/optimizing-gradient-descent/">http://ruder.io/optimizing-gradient-descent/</a>
+
+[23] <a href=https://colah.github.io/posts/2015-08-Backprop/>https://colah.github.io/posts/2015-08-Backprop/</a>
+
+[24] <a href='http://cs231n.github.io/'>Stanford CS231n Convolutional Neural Networks Lecture Notes</a>
+
+[25] <a href='http://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Erhan_Scalable_Object_Detection_2014_CVPR_paper.pdf'>Erhan et al. Scalable Object Detection using Deep Neural Networks</a>
+
+[26] <a href='http://image-net.org/challenges/LSVRC/2014/'>ImageNet Large Scale Visual Recognition Challenge 2014 (ILSVRC2014)</a>
+
+[27] <a href='https://arxiv.org/pdf/1411.4038.pdf'>Long et al. Fully Convolutional Networks for Semantic Segmentation</a>
+
+Sources
+========================================================
+class:smalltext
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+
+&nbsp;
+
+[28] <a href='http://cs.nyu.edu/~dsontag/papers/SilSonFer_ECCV14.pdf'>Silberman et al. Instance Segmentation of Indoor Scenes using a Coverage Loss</a>
+
+[29] <a href='http://colah.github.io/posts/2015-08-Understanding-LSTMs/'>Chris Olah. Understanding LSTM Networks</a>
+
+[30] <a href='https://www.tensorflow.org/versions/master/tutorials/seq2seq/index.html'>Tensorflow seq2seq tutorial</a>
+
+[31] Goodfellow et al. 2016, <a href='http://www.deeplearningbook.org/'>Deep Learning</a>
 
