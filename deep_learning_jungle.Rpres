@@ -949,6 +949,66 @@ Tensorflow and dataflow programming
 
 &nbsp;
 
+Tensorflow is a 
+
+
+Static computation graph
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+https://www.tensorflow.org/programmers_guide/graphs
+
+
+
+Example: Finding the root of a function with TensorFlow
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+Example: Convolutional Neural Network in raw TensorFlow
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+
+Example: Convolutional Neural Network with TensorFlow, using the Estimators API
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+https://www.tensorflow.org/tutorials/layers
+
+
+Speaking of high-level API: Why not just use Keras?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+
+
+... pytorch
+https://www.oreilly.com/ideas/why-ai-and-machine-learning-researchers-are-beginning-to-embrace-pytorch
+
+
 
 Sources
 ========================================================
