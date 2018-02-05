@@ -697,7 +697,7 @@ LeNet: First successful application of convolutional neural networks by Yann LeC
 
 <figure>
     <img src='lenet.png' width='80%'/>
-    <figcaption>Source: http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf</figcaption>
+    <figcaption>Source: [33]</figcaption>
 </figure>
 
 The convolution operation (1)
@@ -710,7 +710,7 @@ The convolution operation (1)
 
 <figure>
     <img src='convolution_demo.png' width='50%'/>
-    <figcaption>Source: Goodfellow et al., Deep Learning.</figcaption>
+    <figcaption>Source: [24]</figcaption>
 </figure>
 
 
@@ -724,7 +724,7 @@ The convolution operation (2)
 
 <figure>
     <img src='2dconv.png' width='50%'/>
-    <figcaption>Source: Goodfellow et al., Deep Learning.</figcaption>
+    <figcaption>Source: [31]</figcaption>
 </figure>
 
 Tasks in computer vision
@@ -1153,6 +1153,10 @@ class:smalltext
 
 [30] <a href='https://www.tensorflow.org/versions/master/tutorials/seq2seq/index.html'>Tensorflow seq2seq tutorial</a>
 
-[31] Goodfellow et al. 2016, <a href='http://www.deeplearningbook.org/'>Deep Learning</a>
+[31] <a href='http://www.deeplearningbook.org/'>Goodfellow et al. 2016, Deep Learning</a>
 
 [32] <a href="https://www.tensorflow.org/programmers_guide/graphs">TensorFlow Documentation: Graphs and Sessions</a>
+
+[33] <a href="http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf">LeCun et al., Gradient-based learning applied to document recognition.</a>
+
+
